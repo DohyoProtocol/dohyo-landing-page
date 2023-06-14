@@ -31,7 +31,7 @@ export const useToastHook = () => {
           ? colors.RED200
           : status === toastTypes.SUCCESS
           ? colors.GREEN200
-          : status === toastTypes.WARNING
+          : status === toastTypes.WARNING || status === toastTypes.SORRY
           ? colors.YELLOW200
           : colors.BLUE200;
 
@@ -59,7 +59,7 @@ export const useToastHook = () => {
                   boxSize="20px"
                   mt={2}
                   as={
-                    status === toastTypes.ERROR || toastTypes.WARNING
+                    status === toastTypes.ERROR || toastTypes.WARNING || toastTypes.SORRY
                       ? WarningIcon
                       : CheckCircleIcon
                   }

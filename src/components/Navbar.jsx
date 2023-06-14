@@ -12,9 +12,7 @@ import {
   Flex,
   SimpleGrid,
   Spacer,
-  HStack,
 } from "@chakra-ui/react";
-import { FaExternalLinkAlt, FaHome } from "react-icons/fa";
 import { StyledButton } from "./StyledButton";
 import { useMobileHook } from "../hooks/useMobile";
 import { toastTypes, urls } from "../assets/constants";
@@ -84,11 +82,7 @@ export const Navbar = () => {
                         m={3}
                         onClick={() => {
                           // window.open(urls.Dapp, "_blank");
-                          newToast(
-                            "app.dohyo.io is not online yet",
-                            toastTypes.WARNING,
-                            3000
-                          );
+                          newToast("App is not online yet", toastTypes.SORRY, 3000);
                         }}
                         text={"Go to App"}
                       />
@@ -156,19 +150,6 @@ export const Navbar = () => {
                   DOHYŌ
                 </Button>
 
-                <HStack ml={3} width={"120px"}>
-                  <Text
-                    fontWeight={"extrabold"}
-                    fontSize={"sm"}
-                    color={"red.600"}
-                    cursor={"pointer"}
-                  >
-                    <a href={urls.BuyLink} target="_blank" rel="noopener noreferrer">
-                      Buy DOHYŌ
-                    </a>
-                  </Text>
-                  <FaExternalLinkAlt size={12} color={"#C53030"} />
-                </HStack>
                 <Spacer />
                 <Button
                   fontSize={"xl"}
@@ -179,7 +160,7 @@ export const Navbar = () => {
                   _hover={{ bg: "whiteAlpha.700" }}
                   onClick={() => {
                     // window.open(urls.Dapp, "_blank");
-                    newToast("app.dohyo.io is not online yet", toastTypes.WARNING, 3000);
+                    newToast("App is not online yet", toastTypes.SORRY, 3000);
                   }}
                 >
                   Launch App
