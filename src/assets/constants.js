@@ -18,11 +18,12 @@ export const urls = {
 };
 
 export const toastTypes = {
-  ERROR: "error",
-  SUCCESS: "success",
-  RELOADING: "reloading",
-  CONFIRMING: "confirming",
-  WARNING: "warning",
+  ERROR: "Error",
+  SUCCESS: "Success",
+  SORRY: "Sorry",
+  RELOADING: "Reloading",
+  CONFIRMING: "Confirming",
+  WARNING: "Warning",
 };
 
 export const colors = {
