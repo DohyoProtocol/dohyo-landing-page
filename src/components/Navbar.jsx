@@ -81,8 +81,8 @@ export const Navbar = () => {
                       <StyledButton
                         m={3}
                         onClick={() => {
-                          // window.open(urls.Dapp, "_blank");
-                          newToast("App is not online yet", toastTypes.SORRY, 3000);
+                          window.open(urls.Dapp, "_blank");
+                          // newToast("App is offline", toastTypes.SORRY, 3000);
                         }}
                         text={"Go to App"}
                       />
@@ -159,8 +159,8 @@ export const Navbar = () => {
                   bg={"whiteAlpha.900"}
                   _hover={{ bg: "whiteAlpha.700" }}
                   onClick={() => {
-                    // window.open(urls.Dapp, "_blank");
-                    newToast("App is not online yet", toastTypes.SORRY, 3000);
+                    window.open(urls.Dapp, "_blank");
+                    // newToast("App is offline yet", toastTypes.SORRY, 3000);
                   }}
                 >
                   Launch App
