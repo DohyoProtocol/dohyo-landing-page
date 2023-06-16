@@ -16,9 +16,9 @@ export const Home = () => {
       <VStack
         mt={mobile ? 12 : -12}
         pt={mobile ? "60%" : "42%"}
-        bgImg={mobile ? null : homebg}
-        bgSize={"contain"}
-        bgRepeat={"no-repeat"}
+        // bgImg={mobile ? null : homebg}
+        // bgSize={"contain"}
+        // bgRepeat={"no-repeat"}
         minH={"100vh"}
         minW={"100%"}
         spacing={0}
