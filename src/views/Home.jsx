@@ -1,4 +1,4 @@
-import { Container, HStack, Text, VStack, Button } from "@chakra-ui/react";
+import { Container, HStack, Text, VStack, Button, Spacer, Image } from "@chakra-ui/react";
 import { useMobileHook } from "../hooks/useMobile";
 import homebg from "../assets/homebg.png";
 import boxbg from "../assets/boxbg.jpeg";
@@ -15,16 +15,20 @@ export const Home = () => {
     <Container maxW={"100%"}>
       <VStack
         mt={mobile ? 12 : -12}
-        pt={mobile ? "60%" : "42%"}
-        // bgImg={mobile ? null : homebg}
-        // bgSize={"contain"}
-        // bgRepeat={"no-repeat"}
+        pt={mobile ? "20%" : "15%"}
         minH={"100vh"}
         minW={"100%"}
         spacing={0}
         justifyContent={"flex-start"}
       >
-        <VStack spacing={0} pl={12} alignSelf={"flex-start"}>
+        <Image
+          pl={mobile ? 6 : 12}
+          alignSelf={"flex-start"}
+          height={72}
+          src="https://i.seadn.io/gcs/files/bb4cc8a1aca26bc552307e83d2d94e77.png?auto=format&w=1000"
+          alt="gm"
+        />
+        <VStack spacing={0} pl={mobile ? 6 : 12} pt={"6%"} alignSelf={"flex-start"}>
           <HStack wrap={"wrap"} spacing={mobile ? 0 : 9} minW={"100%"}>
             <Text color={"white"} fontSize={mobile ? 48 : 64} textAlign={"left"}>
               DOHYŌ
@@ -65,7 +69,7 @@ export const Home = () => {
           </HStack>
         </VStack>
       </VStack>
-      <VStack minH={"100vh"} minW={"100%"} spacing={0} pb={12} mt={mobile ? -36 : -12}>
+      <VStack minH={"100vh"} minW={"100%"} spacing={0} pb={12} mt={mobile ? -12 : -12}>
         <HStack
           justifyContent={mobile ? "center" : "space-between"}
           mt={0}
@@ -181,8 +185,9 @@ export const Home = () => {
               fontWeight={"normal"}
               maxW={72}
             >
-              Dohyō games are made to be played on the fly. Basically whenever you are not
-              busy trading. They require minimal effort while still keeping you hooked.
+              Dohyō games are designed for seamless play, allowing you to engage whenever
+              you have a moment between trading activities. They offer a captivating
+              experience with minimal effort required.
             </Text>
           </VStack>
           <VStack
@@ -245,7 +250,7 @@ export const Home = () => {
             minW={36}
           >
             <Text textAlign={"center"} fontSize={"3xl"} fontWeight={"normal"}>
-              Community Integration
+              Community Program
             </Text>
             <Text
               textColor={"white"}
@@ -254,10 +259,10 @@ export const Home = () => {
               fontWeight={"normal"}
               maxW={72}
             >
-              Our games build on top of existing communities, instead of trying to create
-              new ones. The goal is to extend established group dynamics by adding new
-              layers of interaction. Anybody is free to join with their community and play
-              against their friends.
+              Games on the Dohyō platform embrace existing communities, enriching group
+              dynamics by introducing new layers of interaction. Players are welcome to
+              join with their own communities, engaging in friendly competition against
+              their friends.
             </Text>
           </VStack>
           {mobile && <VStack p={3} minW={36}></VStack>}
@@ -272,7 +277,7 @@ export const Home = () => {
             minW={36}
           >
             <Text textAlign={"center"} fontSize={"3xl"} fontWeight={"normal"}>
-              Dohyo Ambassadors
+              Ambassador Program
             </Text>
             <Text
               textColor={"white"}
@@ -281,11 +286,11 @@ export const Home = () => {
               fontWeight={"normal"}
               maxW={72}
             >
-              The community will periodically elect a marketing representative, who will
-              receive a fixed percentage of the accumulating protocol fees. To assure that
-              marketing actions are actually being taken, only buy transactions will be
-              rewarded. This system allows a clean and transparent marketing strategy,
-              where no funds are spent off-chain, outside of investor control.
+              The community will periodically elect a marketing representative who will be
+              rewarded with a fixed percentage of the accumulated protocol fees. To ensure
+              effective marketing efforts, rewards will be limited to buy transactions.
+              This approach fosters a transparent marketing strategy, where all funds
+              remain within investor sight and no off-chain spending occurs.
             </Text>
           </VStack>
           {mobile && <VStack p={3} minW={36}></VStack>}
@@ -300,88 +305,28 @@ export const Home = () => {
             rounded={20}
             minW={72}
           >
+            {" "}
             <Text textAlign={"center"} fontSize={"3xl"} fontWeight={"normal"}>
-              Smart Contracts
+              Partner Program
             </Text>
-            <Button
-              p={6}
-              rightIcon={<FaExternalLinkAlt size={14} />}
-              m={6}
-              minW={"100%"}
-              textAlign={"left"}
-              bgImg={boxbg}
-              bgSize={"initial"}
-              bgPos={mobile ? "100% 60%" : "0% 80%"}
+            <Text
+              textColor={"white"}
+              textAlign={"center"}
               fontSize={"lg"}
               fontWeight={"normal"}
-              onClick={() => {
-                // window.open(urls.Dapp, "_blank");
-                newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
-              }}
+              maxW={72}
             >
-              Games
-            </Button>{" "}
-            <Button
-              p={6}
-              m={6}
-              minW={"100%"}
-              rightIcon={<FaExternalLinkAlt size={14} />}
-              textAlign={"left"}
-              bgImg={boxbg}
-              bgSize={"initial"}
-              bgPos={mobile ? "100% 70%" : "20% 80%"}
-              fontSize={"lg"}
-              onClick={() => {
-                // window.open(urls.Dapp, "_blank");
-                newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
-              }}
-              fontWeight={"normal"}
-            >
-              Dohyo Chef
-            </Button>{" "}
-            <Button
-              p={6}
-              m={6}
-              minW={"100%"}
-              textAlign={"left"}
-              bgImg={boxbg}
-              rightIcon={<FaExternalLinkAlt size={14} />}
-              bgSize={"initial"}
-              bgPos={mobile ? "100% 80%" : "40% 80%"}
-              fontSize={"lg"}
-              onClick={() => {
-                // window.open(urls.Dapp, "_blank");
-                newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
-              }}
-              fontWeight={"normal"}
-            >
-              Erc20
-            </Button>{" "}
-            <Button
-              p={6}
-              m={6}
-              minW={"100%"}
-              textAlign={"left"}
-              rightIcon={<FaExternalLinkAlt size={14} />}
-              bgImg={boxbg}
-              bgSize={"initial"}
-              bgPos={mobile ? "100% 90%" : "60% 80%"}
-              fontSize={"lg"}
-              onClick={() => {
-                // window.open(urls.Dapp, "_blank");
-                newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
-              }}
-              fontWeight={"normal"}
-            >
-              Utils
-            </Button>
+              Partners will be rewarded with a fixed percentage of the house rake from
+              games played with their currency. This approach provides increased utility
+              for partners and broader audiences for Dohyō games.
+            </Text>
           </VStack>
         </HStack>
         <HStack
           justifyContent={mobile ? "center" : "space-between"}
           mt={0}
           wrap={"wrap"}
-          pb={24}
+          pb={12}
           pt={20}
           minH={20}
           minW={"60%"}
@@ -464,6 +409,121 @@ export const Home = () => {
         <HStack
           wrap={"wrap"}
           justifyContent={mobile ? "center" : "space-between"}
+          pt={16}
+          spacing={mobile ? 0 : 6}
+          minH={20}
+          minW={"80%"}
+          maxW={"80%"}
+          pb={36}
+        >
+          <VStack
+            bgImg={boxbg}
+            bgSize={"initial"}
+            bgPos={mobile ? "100% 0%" : "0% 50%"}
+            p={6}
+            minW={"50%"}
+            alignItems={"flex-start"}
+            rounded={20}
+            minH={64}
+          >
+            <Text textAlign={"center"} fontSize={"3xl"} fontWeight={"normal"}>
+              Smart Contracts
+            </Text>
+            <Spacer />
+            <HStack>
+              <Button
+                p={6}
+                rightIcon={<FaExternalLinkAlt size={14} />}
+                textAlign={"left"}
+                bgImg={boxbg}
+                bgSize={"initial"}
+                bgPos={mobile ? "100% 60%" : "0% 80%"}
+                fontSize={"lg"}
+                fontWeight={"normal"}
+                onClick={() => {
+                  // window.open(urls.Dapp, "_blank");
+                  newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
+                }}
+              >
+                Games
+              </Button>
+              <Button
+                p={6}
+                rightIcon={<FaExternalLinkAlt size={14} />}
+                textAlign={"left"}
+                bgImg={boxbg}
+                bgSize={"initial"}
+                bgPos={mobile ? "100% 70%" : "20% 80%"}
+                fontSize={"lg"}
+                onClick={() => {
+                  // window.open(urls.Dapp, "_blank");
+                  newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
+                }}
+                fontWeight={"normal"}
+              >
+                Dohyo Chef
+              </Button>{" "}
+            </HStack>
+            <HStack>
+              <Button
+                p={6}
+                textAlign={"left"}
+                bgImg={boxbg}
+                rightIcon={<FaExternalLinkAlt size={14} />}
+                bgSize={"initial"}
+                bgPos={mobile ? "100% 80%" : "40% 80%"}
+                fontSize={"lg"}
+                onClick={() => {
+                  // window.open(urls.Dapp, "_blank");
+                  newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
+                }}
+                fontWeight={"normal"}
+              >
+                Erc20
+              </Button>{" "}
+              <Button
+                p={6}
+                textAlign={"left"}
+                rightIcon={<FaExternalLinkAlt size={14} />}
+                bgImg={boxbg}
+                bgSize={"initial"}
+                bgPos={mobile ? "100% 90%" : "60% 80%"}
+                fontSize={"lg"}
+                onClick={() => {
+                  // window.open(urls.Dapp, "_blank");
+                  newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
+                }}
+                fontWeight={"normal"}
+              >
+                Utils
+              </Button>
+            </HStack>
+          </VStack>
+          <VStack alignItems={"left"} rounded={20} mb={mobile ? 12 : 0} minH={64}>
+            <Text
+              textAlign={mobile ? "center" : "left"}
+              fontSize={"3xl"}
+              fontWeight={"normal"}
+              maxW={72}
+            >
+              100% on-chain
+            </Text>
+            <Text
+              textColor={"white"}
+              textAlign={mobile ? "center" : "left"}
+              fontSize={"lg"}
+              fontWeight={"normal"}
+              maxW={72}
+            >
+              100% of the game logic is stored on the blockchain. This allows for a
+              trustless and transparent experience, with no risk for server outage or
+              database corruption.
+            </Text>
+          </VStack>
+        </HStack>
+        <HStack
+          wrap={"wrap"}
+          justifyContent={mobile ? "center" : "space-between"}
           spacing={mobile ? 0 : 6}
           pb={12}
           minW={20}
@@ -474,8 +534,7 @@ export const Home = () => {
             bgPos={mobile ? "100% 0%" : "0% 50%"}
             p={6}
             rounded={20}
-            minW={38}
-            minH={64}
+            minW={36}
           >
             <Text textAlign={"center"} fontSize={"3xl"} fontWeight={"normal"}>
               No Play2Earn
@@ -485,41 +544,17 @@ export const Home = () => {
               textAlign={"center"}
               fontSize={"lg"}
               fontWeight={"normal"}
-              maxW={52}
+              maxW={72}
             >
-              Play2Earn economies are not sustainable in the long run. They mainly rely on
-              pseudo-innovation and generic content generation.
+              Play2Earn economies lack long-term sustainability, primarily relying on
+              superficial innovation and generic content generation.
             </Text>
           </VStack>{" "}
           {mobile && <VStack p={3} minW={36}></VStack>}
           <VStack
-            p={6}
             bgImg={boxbg}
             bgSize={"initial"}
             bgPos={mobile ? "100% 33%" : "33% 50%"}
-            rounded={20}
-            minW={38}
-          >
-            <Text textAlign={"center"} fontSize={"3xl"} fontWeight={"normal"}>
-              No Metaverse
-            </Text>
-            <Text
-              textColor={"white"}
-              textAlign={"center"}
-              fontSize={"lg"}
-              fontWeight={"normal"}
-              maxW={52}
-            >
-              Metaverse games have massive issues with over promising and under
-              delivering. This is due to the fact that good game developers and designers
-              are rare in the web3 space.
-            </Text>
-          </VStack>
-          {mobile && <VStack p={3} minW={36}></VStack>}
-          <VStack
-            bgImg={boxbg}
-            bgSize={"initial"}
-            bgPos={mobile ? "100% 66%" : "66% 50%"}
             p={6}
             rounded={20}
             minW={36}
@@ -532,34 +567,35 @@ export const Home = () => {
               textAlign={"center"}
               fontSize={"lg"}
               fontWeight={"normal"}
-              maxW={48}
+              maxW={72}
             >
-              The Gambling industry is deeply rooted in web2 and there is no real
-              incentive for the average user to switch to web3. Also, crypto networks tend
-              to have bad/ non-existent RNG oracle coverage.
+              The Gambling industry remains deeply rooted in web2, lacking genuine
+              incentives for the average user to transition to web3. Additionally, crypto
+              networks often suffer from inadequate or non-existent RNG oracle coverage.
             </Text>
-          </VStack>
+          </VStack>{" "}
           {mobile && <VStack p={3} minW={36}></VStack>}
           <VStack
             p={6}
             bgImg={boxbg}
             bgSize={"initial"}
-            bgPos={mobile ? "100% 100%" : "100% 50%"}
+            bgPos={mobile ? "100% 66%" : "66% 50%"}
             rounded={20}
-            minW={36}
+            minW={38}
           >
             <Text textAlign={"center"} fontSize={"3xl"} fontWeight={"normal"}>
-              Dohyō
+              No Metaverse
             </Text>
             <Text
               textColor={"white"}
               textAlign={"center"}
               fontSize={"lg"}
               fontWeight={"normal"}
-              maxW={52}
+              maxW={72}
             >
-              Our games are simple and ready to be played. They don't depend on any
-              in-game economy, development progress or randomness credibility.
+              Metaverse games often fall short of expectations, overpromising and
+              underdelivering due to the scarcity of skilled game developers and designers
+              within the web3 space.
             </Text>
           </VStack>
         </HStack>
