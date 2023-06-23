@@ -409,6 +409,7 @@ export const Home = () => {
         <HStack
           wrap={"wrap"}
           justifyContent={mobile ? "center" : "space-between"}
+          justifyItems={"flex-start"}
           pt={16}
           spacing={mobile ? 0 : 6}
           minH={20}
@@ -417,6 +418,7 @@ export const Home = () => {
           pb={36}
         >
           <VStack
+            mb={mobile ? 36 : 0}
             bgImg={boxbg}
             bgSize={"initial"}
             bgPos={mobile ? "100% 0%" : "0% 50%"}
@@ -430,74 +432,70 @@ export const Home = () => {
               Smart Contracts
             </Text>
             <Spacer />
-            <HStack>
-              <Button
-                p={6}
-                rightIcon={<FaExternalLinkAlt size={14} />}
-                textAlign={"left"}
-                bgImg={boxbg}
-                bgSize={"initial"}
-                bgPos={mobile ? "100% 60%" : "0% 80%"}
-                fontSize={"lg"}
-                fontWeight={"normal"}
-                onClick={() => {
-                  // window.open(urls.Dapp, "_blank");
-                  newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
-                }}
-              >
-                Games
-              </Button>
-              <Button
-                p={6}
-                rightIcon={<FaExternalLinkAlt size={14} />}
-                textAlign={"left"}
-                bgImg={boxbg}
-                bgSize={"initial"}
-                bgPos={mobile ? "100% 70%" : "20% 80%"}
-                fontSize={"lg"}
-                onClick={() => {
-                  // window.open(urls.Dapp, "_blank");
-                  newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
-                }}
-                fontWeight={"normal"}
-              >
-                Dohyo Chef
-              </Button>{" "}
-            </HStack>
-            <HStack>
-              <Button
-                p={6}
-                textAlign={"left"}
-                bgImg={boxbg}
-                rightIcon={<FaExternalLinkAlt size={14} />}
-                bgSize={"initial"}
-                bgPos={mobile ? "100% 80%" : "40% 80%"}
-                fontSize={"lg"}
-                onClick={() => {
-                  // window.open(urls.Dapp, "_blank");
-                  newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
-                }}
-                fontWeight={"normal"}
-              >
-                Erc20
-              </Button>{" "}
-              <Button
-                p={6}
-                textAlign={"left"}
-                rightIcon={<FaExternalLinkAlt size={14} />}
-                bgImg={boxbg}
-                bgSize={"initial"}
-                bgPos={mobile ? "100% 90%" : "60% 80%"}
-                fontSize={"lg"}
-                onClick={() => {
-                  // window.open(urls.Dapp, "_blank");
-                  newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
-                }}
-                fontWeight={"normal"}
-              >
-                Utils
-              </Button>
-            </HStack>
+            <Button
+              p={6}
+              rightIcon={<FaExternalLinkAlt size={14} />}
+              textAlign={"left"}
+              bgImg={boxbg}
+              bgSize={"initial"}
+              bgPos={mobile ? "100% 60%" : "0% 80%"}
+              fontSize={"lg"}
+              fontWeight={"normal"}
+              onClick={() => {
+                // window.open(urls.Dapp, "_blank");
+                newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
+              }}
+            >
+              Games
+            </Button>
+            <Button
+              p={6}
+              rightIcon={<FaExternalLinkAlt size={14} />}
+              textAlign={"left"}
+              bgImg={boxbg}
+              bgSize={"initial"}
+              bgPos={mobile ? "100% 70%" : "20% 80%"}
+              fontSize={"lg"}
+              onClick={() => {
+                // window.open(urls.Dapp, "_blank");
+                newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
+              }}
+              fontWeight={"normal"}
+            >
+              Dohyo Chef
+            </Button>{" "}
+            <Button
+              p={6}
+              textAlign={"left"}
+              bgImg={boxbg}
+              rightIcon={<FaExternalLinkAlt size={14} />}
+              bgSize={"initial"}
+              bgPos={mobile ? "100% 80%" : "40% 80%"}
+              fontSize={"lg"}
+              onClick={() => {
+                // window.open(urls.Dapp, "_blank");
+                newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
+              }}
+              fontWeight={"normal"}
+            >
+              Erc20
+            </Button>{" "}
+            <Button
+              p={6}
+              textAlign={"left"}
+              rightIcon={<FaExternalLinkAlt size={14} />}
+              bgImg={boxbg}
+              bgSize={"initial"}
+              bgPos={mobile ? "100% 90%" : "60% 80%"}
+              fontSize={"lg"}
+              onClick={() => {
+                // window.open(urls.Dapp, "_blank");
+                newToast("Documentation is not online yet", toastTypes.SORRY, 3000);
+              }}
+              fontWeight={"normal"}
+            >
+              Utils
+            </Button>
           </VStack>
           <VStack alignItems={"left"} rounded={20} mb={mobile ? 12 : 0} minH={64}>
             <Text
